@@ -70,9 +70,9 @@ For both datasets, we saw a significant increase in the testing accuracy on the 
  Logistic Regression & Cleaned News & 74.54 & 67.30 & 182.60 \\
  \hline \hline
  Naive Bayes & Uncleaned IMDB & 89.81 & 51.29 & 12.83 \\ 
- Naive Bayes & Cleaned IMDB & 88.19 & 83.65 & 5.53 \\ 
+ Naive Bayes & Cleaned IMDB & 88.19 & 83.65 & 5.66 \\ 
  Logistic Regression & Uncleaned IMDB & 99.83 & 50.27 & 154.20 \\
- Logistic Regression & Cleaned IMDB & 92.66 & 87.95 & 2.64  \\[1ex] 
+ Logistic Regression & Cleaned IMDB & 92.66 & 87.95 & 2.57  \\[1ex] 
  \hline
 \end{tabular}
 \caption{Comparing Various Models with Best Accuracies on both datasets}
@@ -80,9 +80,9 @@ For both datasets, we saw a significant increase in the testing accuracy on the 
 \end{table}
 
 \subsection{Naive Bayes vs Logistic Regression}
-We then performed multiclass classification on the 20 News Group dataset using cleaned dataset with the selected features. Our results concluded that Naive Bayes worked slightly better than logistic regression. In the best case scenario, the logistic regression resulted in 67.30\% testing accuracy. It was also almost 10 times slower than Naive Bayes, with a training time of 182.60 seconds. We chose to compare our implementation of Naive Bayes with the Scikit Learn's implementation. Ours performed slightly better as their model resulted in an accuracy of 67.75\% vs 69.2\%. It is also interesting to note that our Naive Bayes model is 3x slower than Scikit Learn's implementation because their model is parallelized and therefore can run much faster. Our implementation is vectorized and fast but not to the same extent.
+We then performed multiclass classification on the 20 News Group dataset using cleaned dataset with the selected features. Our results concluded that Naive Bayes worked slightly better than logistic regression. In the best case scenario, the logistic regression resulted in 67.30\% testing accuracy. It was also almost 10 times slower than Naive Bayes, with a training time of 182.60 seconds. We chose to compare our implementation of Naive Bayes with the Scikit Learn's implementation. Ours performed slightly better as their model resulted in an accuracy of 67.75\% vs 69.20\%. It is also interesting to note that our Naive Bayes model is 3x slower than Scikit Learn's implementation because their model is parallelized and therefore can run much faster. Our implementation is vectorized and fast but not to the same extent.
 
-Our binary classification on the IMDB Reviews dataset concluded that Logistic Regression was more accurate than Naive Bayes. In the best case scenario, the Naive Bayes received a testing accuracy of 83.65\%, whereas logistic regression resulted in 87.95\%. Naive Bayes was slower in this case, taking 3.20 seconds for training as opposed to Logistic Regression which took 2.64 seconds.
+Our binary classification on the IMDB Reviews dataset concluded that Logistic Regression was more accurate than Naive Bayes. In the best case scenario, the Naive Bayes received a testing accuracy of 83.65\%, whereas logistic regression resulted in 87.95\%. Naive Bayes was slower in this case, taking 5.66 seconds for training as opposed to Logistic Regression which took 2.57 seconds.
 
 As we can conclude, our classifiers perform much better on the IMDB Reviews dataset than they do on the 20 News Group dataset. Naive Bayes performs 14.45\% better on IMDB, and Logistic Regression performs 20.65\% better. They are also significantly faster on this dataset. This is perhaps due to the binary nature of the IMDB dataset. 
 
@@ -147,15 +147,15 @@ Table \ref{table-models} presents the models we used on both datasets. In additi
  \hline\hline
  \rowcolor{lightgray}Naive Bayes && 94.03 & 69.20 & 17.56 \\ 
  Logistic Regression && 74.54 & 67.30 & 182.60 \\
- SGDC & 20 News Group & 89.33 & 67.90 & 6.02 \\
- Decision Tree && 97.23 & 44.07 & 418.96 \\
-  Ada Boost && 41.32 & 36.36 & 261.75\\
+ SGDC & 20 News Group & 89.33 & 67.90 & 6.89 \\
+ Decision Tree && 97.29 & 43.77 & 220.29 \\
+  Ada Boost && 41.42 & 36.36 & 241.15\\
  \hline \hline
- Naive Bayes && 88.19 & 83.65 & 5.53 \\
-\rowcolor{lightgray}Logistic Regression && 92.66 & 87.95 & 2.64 \\
- SGDC & IMDB Reviews & 85.80 & 84.12 & 16.69 \\
- Decision Tree && 1.00 & 71.90 & 141.97 \\
- Ada Boost && 80.67 & 80.16 & 442.34 \\[1ex] 
+ Naive Bayes && 88.19 & 83.65 & 5.66 \\
+\rowcolor{lightgray}Logistic Regression && 92.66 & 87.95 & 2.57 \\
+ SGDC & IMDB Reviews & 86.09 & 84.26 & 16.69 \\
+ Decision Tree && 1.00 & 71.63 & 154.44 \\
+ Ada Boost && 80.67 & 80.16 & 366.64 \\[1ex] 
  \hline
 \end{tabular}
 \caption{Comparing Various Models with Best Accuracies on both datasets}
